@@ -1,13 +1,5 @@
 package com.example;
 
-/* Not applicable when using Spring Boot
-import java.io.IOException;
-import java.util.Properties;
-
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration; */
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
