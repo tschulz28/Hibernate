@@ -56,46 +56,6 @@ public class HelloWorld {
      * @param args
      */
     public static void main(String[] args) {
-        // version 1.0 - Using hibernate.cfg.xml
-        // Create SessionFactory from hibernate.cfg.xml
-        /* Not applicable when using Spring Boot
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory(); */
-
-        // version 1.1 - Using application.properties   
-        // Create SessionFactory from application.properties
-        /* Not applicable when using Spring Boot
-        Properties props = new Properties();
-        try {
-            props.load(ClassLoader.getSystemResourceAsStream("application.properties"));
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        Configuration config = new Configuration();
-        config.setProperties(props);
-        config.addAnnotatedClass(Message.class);
-        SessionFactory sessionFactory = config.buildSessionFactory();
-
-        // Session öffnen
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-
-        // Neues Objekt speichern
-        Message msg = new Message("Hello World with Hibernate and application.properties!");
-        session.persist(msg);
-
-        // Commit
-        session.getTransaction().commit();
-
-        // Objekt auslesen
-        Message loaded = session.get(Message.class, msg.getId());
-        System.out.println("Geladen: " + loaded.getText());
-
-        session.close();
-        sessionFactory.close(); */
-        
-        // version 2.0 - Using Spring Boot + Spring Data JPA
         SpringApplication.run(HelloWorld.class, args);
     }
 }

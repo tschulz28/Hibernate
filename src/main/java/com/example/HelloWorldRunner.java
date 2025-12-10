@@ -16,13 +16,20 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class HelloWorldRunner implements CommandLineRunner {
-
+    /**
+     * The {@link MessageService} to handle message operations.
+     */
     private final MessageService service;
 
     public HelloWorldRunner(MessageService service) {
         this.service = service;
     }
 
+    /**
+     * Runs the Hello World logic at startup.
+     * 
+     * @param args Command line arguments (not used).
+     */
     @Override
     public void run(String... args) throws Exception {
         Message msg = service.saveMessage("Hello World with Spring Boot + JPA!");

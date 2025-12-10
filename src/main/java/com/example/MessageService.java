@@ -9,12 +9,13 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class MessageService {
     /**
-     * The Message repository.
+     * The Message repository, {@link MessageRepository}.
      */
     private final MessageRepository repository;
 
     /**
      * Constructor for MessageService.
+     * @param repository The Message repository to use.
      */
     public MessageService(MessageRepository repository) {
         this.repository = repository;
@@ -22,7 +23,9 @@ public class MessageService {
 
     /**
      * Saves a new message.
+     * 
      * @param text The message text to save and print
+     * 
      * @return The resulting <code>Message</code> entity.
      */
     @Transactional
@@ -35,6 +38,7 @@ public class MessageService {
 
     /**
      * Prints a message by its ID.
+     * 
      * @param id The ID of the message to print.
      */
     @Transactional(readOnly = true)
