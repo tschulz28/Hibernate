@@ -45,6 +45,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 
  * @version 1.0 - Using hibernate.cfg.xml
  * @version 1.1 - Using application.properties
+ * @version 2.0 - Using Spring Boot + Spring Data JPA
+ * 
  * @author Thomas Schulz
  */
 @SpringBootApplication
@@ -54,10 +56,12 @@ public class HelloWorld {
      * @param args
      */
     public static void main(String[] args) {
+        // version 1.0 - Using hibernate.cfg.xml
         // Create SessionFactory from hibernate.cfg.xml
         /* Not applicable when using Spring Boot
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory(); */
 
+        // version 1.1 - Using application.properties   
         // Create SessionFactory from application.properties
         /* Not applicable when using Spring Boot
         Properties props = new Properties();
@@ -91,7 +95,7 @@ public class HelloWorld {
         session.close();
         sessionFactory.close(); */
         
-        
+        // version 2.0 - Using Spring Boot + Spring Data JPA
         SpringApplication.run(HelloWorld.class, args);
     }
 }
